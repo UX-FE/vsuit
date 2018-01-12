@@ -12,8 +12,8 @@ module.exports = merge(webpackBaseConfig, {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
-        filename: 'uxkit.js',
-        library: 'uxkit',
+        filename: 'vsuit.js',
+        library: 'vsuit',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

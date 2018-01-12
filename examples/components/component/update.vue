@@ -5,7 +5,7 @@
         </div>
         <div class="mItem">
             <div class="title2">
-                uxKit1.0.0：
+                vsuit1.0.0：
             </div>
             <div class="wrap">
                 <div>

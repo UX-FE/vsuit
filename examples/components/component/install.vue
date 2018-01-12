@@ -14,7 +14,7 @@
                 <div class="q-title">代码示例：</div>
 <pre>
 
-    npm i uxKit -S
+    npm i vsuit -S
 
 </pre>
             </div>

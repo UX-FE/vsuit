@@ -2,7 +2,7 @@
     <header class="topBar" id="J_topBar">
 		<div class="logo">
         <i class="icon-f-logo"></i>
-        <div class="logo-title">uxKit 组件库</div>
+        <div class="logo-title">vsuit 组件库</div>
     </div>
     <v-nav :nav="nav"></v-nav>
 	</header>

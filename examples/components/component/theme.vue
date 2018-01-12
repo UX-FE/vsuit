@@ -9,7 +9,7 @@
             </div>
             <div class="wrap">
                 <div>
-                    uxKit默认提供一套主题
+                    vsuit默认提供一套主题
                 </div>
             </div>
         </div>

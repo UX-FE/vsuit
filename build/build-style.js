@@ -14,7 +14,7 @@ gulp.task('css', function () {
             browsers: ['last 2 versions', 'ie > 8']
         }))
         .pipe(cleanCSS())
-        .pipe(rename('uxkit.css'))
+        .pipe(rename('vsuit.css'))
         .pipe(gulp.dest('../dist/styles'));
 });
 

@@ -26,7 +26,7 @@ module.exports = merge(webpackBaseConfig, {
     },
     resolve: {
         alias: {
-            uxkit: '../../src/index',
+            vsuit: '../../src/index',
             vue: 'vue/dist/vue.esm.js'
             // vue: 'vue/dist/vue.runtime.js'
         }

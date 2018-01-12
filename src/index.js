@@ -23,8 +23,8 @@ const components = {
     Dial,
     BaseButton
 };
-//Defining uxkit objects
-const uxkit = {
+//Defining vsuit objects
+const vsuit = {
     ...components,
 };
 //Define the installation function
@@ -34,8 +34,8 @@ const install = function(Vue, opts = {}) {
     locale.use(opts.locale);
     locale.i18n(opts.i18n);
 
-    Object.keys(uxkit).forEach(key => {
-        Vue.component(key, uxkit[key]);
+    Object.keys(vsuit).forEach(key => {
+        Vue.component(key, vsuit[key]);
     });
 
     // Vue.prototype.$Loading = LoadingBar;
@@ -59,7 +59,7 @@ const API = {
 };
 //Define API.lang
 API.lang = (code) => {
-    const langObject = window['uxkit/locale'].default;
+    const langObject = window['vsuit/locale'].default;
     if (code === langObject.i.locale) locale.use(langObject);
     else console.log(`The ${code} language pack is not loaded.`); // eslint-disable-line no-console
 };

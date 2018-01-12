@@ -1,11 +1,11 @@
 {
-  "name": "uxkit",
+  "name": "vsuit",
   "version": "1.0.0",
-  "title": "uxKit",
-  "description": "A high quality  UI components Library with Vue.js",
-  "homepage": "",
+  "title": "vsuit",
+  "description": "A high quality UI components Library with Vue.js",
+  "homepage": "https://github.com/UX-FE/vsuit#readme",
   "keywords": [
-    "uxkit",
+    "vsuit",
     "vue",
     "vue.js",
     "component",
@@ -13,7 +13,7 @@
     "ui",
     "framework"
   ],
-  "main": "dist/uxkit.js",
+  "main": "dist/vsuit.js",
   "files": [
     "dist",
     "src"
@@ -30,7 +30,7 @@
     "test": "npm run lint && npm run unit",
     "prepublish": "npm run dist"
   },
-  "author": "Aresn",
+  "author": "caomei",
   "license": "MIT",
   "dependencies": {
     "async-validator": "^1.8.2",
@@ -104,5 +104,16 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UX-FE/vsuit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UX-FE/vsuit/issues"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
   }
 }

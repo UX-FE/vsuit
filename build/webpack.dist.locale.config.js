@@ -18,7 +18,7 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/locale'),
         publicPath: '/dist/locale/',
         filename: '[name].js',
-        library: 'uxkit/locale',
+        library: 'vsuit/locale',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

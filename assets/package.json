@@ -1,11 +1,11 @@
 {
-  "name": "uxkit",
+  "name": "vsuit",
   "version": "2.8.0",
-  "title": "uxKit",
+  "title": "vsuit",
   "description": "A high quality  UI components Library with Vue.js",
   "homepage": "",
   "keywords": [
-    "uxkit",
+    "vsuit",
     "vue",
     "vue.js",
     "component",
@@ -13,7 +13,7 @@
     "ui",
     "framework"
   ],
-  "main": "dist/uxkit.js",
+  "main": "dist/vsuit.js",
   "files": [
     "dist",
     "src"

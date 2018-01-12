@@ -4,11 +4,11 @@
 import Vue from 'vue';
 import router from './router'
 import App from './app.vue';
-import uxKit from '../src/index';
+import vsuit from '../src/index';
 // import locale from '../src/locale/lang/en-US';
 import locale from '../src/locale/lang/zh-CN';
 
-Vue.use(uxKit, { locale });
+Vue.use(vsuit, { locale });
 
 // 开启debug模式
 Vue.config.debug = true;

@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import uxKit from '../../src/index';
+import vsuit from '../../src/index';
 
-Vue.use(uxKit);
+Vue.use(vsuit);
 
 let id = 0;
 
