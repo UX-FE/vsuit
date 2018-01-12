@@ -1,0 +1,16 @@
+/*button class has a prefix*/
+.uxk-btn{
+    @include btn;/*common style*/
+    @include btn-default;/*default style*/
+    &-primary{
+        @include btn-primary;
+    }
+    &-ghost{
+        @include btn-ghost;
+    }
+    &-text{
+        @include btn-text;
+    }
+}
+
+

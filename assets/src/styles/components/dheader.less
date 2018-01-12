@@ -1,0 +1,49 @@
+
+.topBar {
+  top:0;
+  height: 60px;
+  width: 100%;
+  min-width: 1024px;
+  position: fixed;
+  z-index: 8000;
+  &>*{
+    display: inline-block;
+  }
+  .logo{  
+    i.icon-f-logo{
+      position: absolute;
+      left: 200px;
+      top: 14px;
+      &:before{
+        color:#4B61D9;
+        font-size: 32px;
+      }
+    }
+    .logo-title{
+      font-size: 18px;
+      color: #4B61D9;
+      margin: 18px 10px 18px 250px;
+    }
+  }
+  .nav{
+    float: right;
+    height: 100%;
+    line-height: 60px;
+    padding-right: 24%;
+  }
+}
+@media screen and (max-width: 1280px) {
+    .topBar {
+      .logo{
+        i.icon-f-logo{
+          left: 100px;
+        }
+        .logo-title{
+          margin-left: 150px;
+        }
+      }
+      .nav{
+        padding-right: 10%;
+      }
+    }
+}
