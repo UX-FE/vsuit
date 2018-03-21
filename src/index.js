@@ -1,8 +1,7 @@
 // es6 polyfill 加载Polyfill类库，就能使用IE10等或者还没有提供对Promise支持的浏览器中使用Promise里规定的方法。
 import 'core-js/fn/array/find'
 import 'core-js/fn/array/find-index'
-// test
-console.log(12)
+
 // import component
 // import base component
 import Row from './components/row'
