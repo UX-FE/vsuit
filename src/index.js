@@ -2,7 +2,6 @@
 import 'core-js/fn/array/find'
 import 'core-js/fn/array/find-index'
 
-console.log(333)
 // import component
 // import base component
 import Row from './components/row'
