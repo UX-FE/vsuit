@@ -1,7 +1,8 @@
 // es6 polyfill 加载Polyfill类库，就能使用IE10等或者还没有提供对Promise支持的浏览器中使用Promise里规定的方法。
 import 'core-js/fn/array/find'
 import 'core-js/fn/array/find-index'
-
+// test
+console.log(12)
 // import component
 // import base component
 import Row from './components/row'
@@ -163,8 +164,8 @@ const install = function (Vue, opts = {}) {
   Object.keys(vsuit).forEach(key => {
     Vue.component(key, vsuit[key])
   })
-  Vue.prototype.$Modal = Modal;
-  Vue.prototype.$Loading = Loading;
+  Vue.prototype.$Modal = Modal
+  Vue.prototype.$Loading = Loading
 
     // Vue.prototype.$Loading = LoadingBar;
     // Vue.prototype.$Message = Message;
