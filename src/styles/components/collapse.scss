@@ -1,0 +1,73 @@
+$collapse-prefix: #{$css-prefix}collapse;
+
+.#{$collapse-prefix}{
+    border-top: 1px solid #ebeef5;
+    border-bottom: 1px solid #ebeef5;
+    &-item{
+        &-header{
+            height: 48px;
+            line-height: 48px;
+            background-color: #fff;
+            color: #303133;
+            cursor: pointer;
+            border-bottom: 1px solid #ebeef5;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-bottom-color .3s;
+            outline: none;
+            &-title{
+                display:inline-block;
+                vertical-align: middle;
+            }
+            i{
+                transition: transform .2s ease-in-out;
+            }
+        }
+        &-content{
+            will-change: height;
+            background-color: #fff;
+            overflow: hidden;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ebeef5;
+            &-box{
+
+            }
+
+        }
+        &-active{
+            .#{$collapse-prefix}{
+                &-item-header{
+                    i{
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+    
+    &-icon-right{
+        .#{$collapse-prefix}{
+            &-item{
+                &-header{
+                    position:relative;
+                    i{
+                        position:absolute;
+                        right:20px;
+                        top:18px;
+                        font-size:14px;
+                    }
+                }
+                &-active{
+                    .#{$collapse-prefix}{
+                        &-item-header{
+                            i{
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

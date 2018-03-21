@@ -1,0 +1,87 @@
+$input-prefix: #{$css-prefix}input;
+.#{$input-prefix} {
+    @include input;
+    &-wrapper{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        vertical-align: middle;
+        line-height: normal
+    }
+    // &-icon {
+    //     width: 32px;
+    //     height: $input-height-base;
+    //     line-height: $input-height-base;
+    //     font-size: 16px;
+    //     text-align: center;
+    //     color: $subsidiary-color;
+    //     position: absolute;
+    //     right: 0;
+    //     z-index: 3;
+    // }
+    
+    // &-hide-icon &-icon{
+    //     display: none;
+    // }
+    // &-icon-validate{
+    //     display: none;
+    // }
+
+    // &-icon-normal + &{
+    //     padding-right: 32px;
+    // }
+    // // #554
+    // &-hide-icon &-icon-normal + &{
+    //     padding-right: $input-padding-horizontal;
+    // }
+
+    // &-wrapper-large &-icon{
+    //     font-size: 18px;
+    //     height: $input-height-large;
+    //     line-height: $input-height-large;
+    // }
+    // &-wrapper-small &-icon{
+    //     width: 24px;
+    //     font-size: 14px;
+    //     height: $input-height-small;
+    //     line-height: $input-height-small;
+
+    //     //+ .#{$input-prefix} {
+    //     //    padding-right: 24px;
+    //     //}
+    // }
+}
+
+.#{$input-prefix}-group{
+    @include input-group("#{$input-prefix}");
+}
+
+// .#{$form-item-prefix}-error{
+//     .#{$input-prefix}{
+//         @include input-error;
+//         &-icon{
+//             color: $error-color;
+//         }
+//     }
+//     .#{$input-prefix}-group{
+//         @include input-group-error;
+//     }
+//     .#{$transfer-prefix} {
+//         .#{$input-prefix} {
+//             @include input;
+//             &-icon{
+//                 color: $subsidiary-color;
+//             }
+//         }
+//     }
+// }
+// .#{$form-item-prefix}-validating{
+//     .#{$input-prefix}{
+//         &-icon-validate{
+//             display: inline-block;
+//         }
+//         &-icon + .#{$input-prefix}{
+//             padding-right: 32px;
+//         }
+//     }
+// }

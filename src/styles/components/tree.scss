@@ -1,0 +1,52 @@
+$tree-prefix:#{$css-prefix}tree;
+
+.#{$tree-prefix}{
+    cursor: default;
+    background: #fff;
+    color: #606266;
+    &-node{
+        white-space: nowrap;
+        outline: none;
+        &-title-wrap{
+            display: flex;
+            align-items: center;
+            height: 26px;
+            cursor: pointer;
+            &:hover,&:active{
+                background-color: #f5f7fa;
+            }
+
+        }
+        &-body{
+            overflow: hidden;
+            background-color: transparent;
+        }
+        &-arrow{
+            cursor: pointer;
+            color: #c0c4cc;
+            padding: 6px;
+            i{
+                color: #c0c4cc;
+                font-size: 12px;
+                transform: rotate(0deg);
+                transition: transform .3s ease-in-out;
+                &.expanded{
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        &-title{
+            font-size:14px;
+        }
+        &-disabled{
+            .#{$tree-prefix}-title-wrap{
+                cursor: default;
+                &:hover,&:active{
+                    background-color: transparent;
+                }
+    
+
+            }
+        }
+    }
+}

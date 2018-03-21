@@ -1,5 +1,6 @@
 /*button class has a prefix*/
-.uxk-btn{
+$btn-prefix:#{$css-prefix}btn;
+.#{$btn-prefix}{
     @include btn;/*common style*/
     @include btn-default;/*default style*/
     &-primary{
@@ -11,6 +12,50 @@
     &-text{
         @include btn-text;
     }
+    &-circle{
+        @include btn-circle;
+    }
+    &-group {
+        @include btn-group($btn-prefix);
+    }
+
+    &-group-vertical {
+        @include  btn-group-vertical($btn-prefix);
+    }
+    &-loading{
+        pointer-events: none;
+        opacity:0.7;
+        .status-icon{
+            i{
+                animation: rotating 2s linear infinite;
+                -webkit-animation: rotating 2s linear infinite;
+            }
+        }
+    }
+    &-success{
+        pointer-events: none;
+        background-color:#67c23a;
+    }
+    &-error{
+        pointer-events: none;
+        background-color:red;
+    }
+    &-warning{
+        pointer-events: none;
+        background-color:#e6a23c;
+    }
 }
+
+@keyframes rotating
+{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+
 
 

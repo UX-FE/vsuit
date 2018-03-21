@@ -1,97 +1,102 @@
-
-.datePicker {
+/*date class has a prefix*/
+$date-prefix:#{$css-prefix}date;
+.#{$date-prefix}{
     position: relative;
-    width: 157px;
-    height: 34px;
-    .inputWrap {
-        border-radius: 34px;
+    display:inline-block;
+    width: $date-width;
+    height: $date-height;
+    .dateWrap {
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: 4000;
-        background-color: #5670D5;
         cursor: pointer;
-        input {
-            cursor: pointer;
+        border-radius: $date-radius;
+        z-index: $zindex-select+1;
+        background-color: $date-background;
+        .date {
             height: 100%;
-            border: 0px;
             width: 100%;
-            border-radius: 34px;
-            color: #fff;
-            padding-left: 42px;
+            padding: 0 40px 0 42px;
             text-align: center;
-            padding-right: 30px;
-            font-size: 14px;
-            background-color: transparent;
+            color: $date-color;
+            font-size: $date-fontSize;
+            line-height: $date-height;
         }
         .placeholder{
             position: absolute;
-            top: 8px;
-            color: #A2B3C0;
+            top: 7px;
             left: 42px;
+            color: $date-placeholder-color;
         }
-        i.icon-f-date {
+        i.vsu-ion-calendar {
             cursor: pointer;
             position: absolute;
             left: 16px;
+            top: 8px;
+            &:before{
+                color:$date-calendar-color;
+                font-size: $date-calendar-fontSize;
+            }
+        }
+        i.vsu-ion-close-circled{
+            position: absolute;
             top: 9px;
-            &:before {
-                font-size: 16px;
-                color: #fff;
-            }
-        }
-        i.icon-f-clear{
-            position: absolute;
-            top: 10px;
-            right: 40px;
+            right: 28px;
             &:before{
-                color:#8898A5;
+                color:$date-close-circled-color;
+                font-size: $date-close-circled-fontSize;
+            }
+            &:hover{
+                &:before{
+                    color:$date-close-circled-hover-color;
+                }
             }
         }
-        i.icon-f-down,i.icon-f-up{
+        i.vsu-ion-arrow-down-b,
+        i.vsu-ion-arrow-up-b{
             position: absolute;
-            right: 0px;
-            top: 6px;
+            right: 12px;
+            top: 9px;
             &:before{
-                color: #4A4A4A;
-                font-size: 26px;
+                color:$date-arrow-color;
+                font-size: $date-arrow-fontSize;
             }
-        }
-        i.icon-f-up{
-            top: 3px;
+            &.vsu-ion-arrow-up-b{
+                top: 8px;
+            }
         }
     }
     .pickerWrap {
-        z-index: 3000;
         position: absolute;
-        width: 300px;
-        height: 296px;
-        background: #FFFFFF;
-        box-shadow: 0 2px 8px 0 rgba(14,29,74,0.19);
-        border-radius: 14px;
-        padding-top: 44px;
+        z-index: $zindex-select;
+        width: $date-picker-width;
+        height: $date-picker-height;
+        background: $date-picker-background;
+        box-shadow: $date-picker-shadow;
+        border-radius: $date-picker-radius;
+        padding-top: $date-height+10px;
         .header {
-            height: 34px;
-            line-height: 34px;
+            height: $date-pickerHeader-height;
+            line-height: $date-pickerHeader-height;
             .left,
             .right {
                 width: 50%;
                 position: relative;
-                i {
-                    cursor: pointer;
+                i.vsu-ion-arrow-left-b,
+                i.vsu-ion-arrow-right-b {
                     &.disable {
-                        cursor: default;
                         &:before {
-                            color:  rgba(199,213,217,.45);
+                            color:  $date-pickerHeader-arrow-disable-color;
                         }
                     }
                     &:before {
-                        color: #4B61D9;
-                        font-size: 13px;
+                        color: $date-pickerHeader-arrow-color;
+                        font-size: $date-pickerHeader-arrow-fontSize;
                     }
                     &:not(.disable):hover {
+                        cursor: pointer;
                         &:before {
-                            color: #A2B3C0;
+                            color: $date-pickerHeader-arrow-hover-color;
                         }
                     }
                 }
@@ -100,25 +105,11 @@
                 float: left;
                 text-align: left;
                 padding-left: 16px;
-                i.icon-f-left{
-                    transform: scale(0.7) rotate(90deg);
-                    -webkit-transform: scale(0.7) rotate(90deg);
-                    -moz-transform: scale(0.7) rotate(90deg);
-                    -ms-transform: scale(0.7) rotate(90deg);
-                    -o-transform: scale(0.7) rotate(90deg);
-                }
             }
             .right {
                 float: right;
                 text-align: right;
                 padding-right: 16px;
-                i.icon-f-right{
-                    transform: scale(0.7) rotate(270deg);
-                    -webkit-transform: scale(0.7) rotate(270deg);
-                    -moz-transform: scale(0.7) rotate(270deg);
-                    -ms-transform: scale(0.7) rotate(270deg);
-                    -o-transform: scale(0.7) rotate(270deg);
-                }
             }
             .yearSelect,
             .monthSelect {
@@ -137,10 +128,11 @@
                     border-radius: 2px;
                     color: #4B61D9;
                     position: relative;
-                    i {
+                    i.vsu-ion-arrow-down-b,
+                    i.vsu-ion-arrow-up-b {
                         position: absolute;
                         top: 4px;
-                        right: 2px;
+                        right: 5px;
                         &:before {
                             color: #4B61D9;
                         }
@@ -155,7 +147,7 @@
                     box-shadow: 0 2px 8px 0 rgba(14,29,74,0.19);
                     width: 75px;
                     z-index: 2000;
-                    top: 28px;
+                    top: 30px;
                     max-height: 155px;
                     overflow: hidden;
                     text-align: left;
@@ -164,7 +156,7 @@
                     li {
                         height: 24px;
                         line-height: 24px;
-                        padding-left: 10px;
+                        text-align: center;
                         &:hover:not(.active) {
                             background-color: #ECF0FF;
                         }
@@ -181,6 +173,9 @@
                     right: 0;
                     max-height: 220px;
                     overflow: hidden;
+                    li{
+                        padding-right: 10px;
+                    }
                 }
             }
             .monthSelect {
@@ -193,18 +188,18 @@
         .body {
             font-size: 12px;
             padding: 6px 12px 8px;
-            height: 234px;
             text-align: center;
+            height: $date-pickerBody-height;
             table{
                 width: 100%;
                 border-spacing: 0;
             }
             thead {
-                background-color: #ECF0FF;
-                font-size: 12px;
-                color: #4C5764;
+                background-color: $date-pickerBody-thead-background;
+                color: $date-pickerBody-thead-color;
                 th {
-                    height: 23px;
+                    height: $date-pickerBody-thead-height;
+                    padding-top: 2px;
                 }
             }
             tbody {
@@ -229,7 +224,7 @@
                         display: inline-block;
                         width: 100%;
                         height: 30px;
-                        line-height: 30px;
+                        line-height: 32px;
                         label {
                             height: 30px;
                             position: absolute;
@@ -238,7 +233,7 @@
                             text-align: center;
                             left: 0;
                             top: 0;
-                            line-height: 30px;
+                            line-height: 32px;
                         }
                     }
                     &.thisMonth {
@@ -259,15 +254,29 @@
                                     display: inline-block;
                                     position: absolute;
                                     z-index: 1000;
-                                    left: 8px;
+                                    left: 9px;
                                     top: 4px;
                                 }
                                 label {
                                     color: #fff;
                                 }
                             }
+                            &.behindDay{
+                                span {
+                                    &:before {
+                                        left: 8px;
+                                    }
+                                }
+                            }
                         }
                         &.curDay {
+                            &.behindDay{
+                                span {
+                                    &:before {
+                                        left: 8px;
+                                    }
+                                }
+                            }
                             span {
                                 &:before {
                                     content: "";
@@ -278,7 +287,7 @@
                                     display: inline-block;
                                     position: absolute;
                                     z-index: 1000;
-                                    left: 8px;
+                                    left: 9px;
                                     top: 4px;
                                 }
                                 label {
@@ -310,30 +319,26 @@
             }
         }
         .footer {
-            height: 42px;
-            line-height: 42px;
-            background-color: #fff;
-            bottom: -32px;
-            box-shadow: 0 2px 8px 0 rgba(14, 29, 74, 0.19);
             position: absolute;
             left:0;
             width: 100%;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
-            .tip{
-                color:#45D6E9;
-                font-size: 12px;
-                margin-left:24px;
-            }
-            .inputs{
+            bottom: -32px;
+            height: $date-pickerFooter-height;
+            line-height: $date-pickerFooter-height;
+            background-color: $date-pickerFooter-background;
+            box-shadow: $date-pickerFooter-shadow;
+            border-bottom-left-radius: $date-pickerFooter-radius;
+            border-bottom-right-radius: $date-pickerFooter-radius;
+            .selectedDate{
                 position: absolute;
                 left: 20px;
                 top: 0;
                 font-size: 12px;
                 &.placeholder{
-                    color: #A2B3C0;
+                    color: #7ba4c0;
                 }
                 span{
+                    color: #7ba4c0;
                     &:not(.icon-rightArrow){
                         border: 1px solid #DBE4EA;
                         border-radius: 2px;
@@ -354,44 +359,11 @@
             }
             .btns {
                 float: right;
-                .btn {
+                .vsu-btn {
                     width: 70px;
                     height: 30px;
-                    line-height: 28px;
+                    line-height: 10px;
                     margin-right: 10px;
-                }
-            }
-        }
-    }
-}
-.datePicker.formPicker{
-    width: 300px;
-    height: 36px;
-    .inputWrap{
-        background: #FFFFFF;
-        border: 1px solid #4C5764;
-        border-radius: 4px;
-        box-shadow: none;
-        input{
-            color: #6B7C83;
-            font-size: 14px;
-            text-align: left;
-            padding-left: 40px;
-        }
-        i.icon-f-date{
-            &:before{
-                color: #4C5764;
-            }
-        }
-    }
-    
-    &.active,&.focus{
-        .inputWrap{
-            border-color:#4B61D9;
-            box-shadow: 0 0 3px 0 rgba(75,97,217,0.63);
-            i.icon-f-date{
-                &:before{
-                    color: #4B61D9;
                 }
             }
         }

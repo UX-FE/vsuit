@@ -1,195 +1,343 @@
 // Prefix
-$css-prefix             : uxk-;
-$css-prefix-iconfont    : uxk-icon;
+$css-prefix             : vsu- !default !default;
+$css-prefix-iconfont    : vsu-ion !default;
 
 // Color
-$primary-color          : #4b61d9;
-$primary-hover-color   : #2C41B0;
-$primary-active-color   : #2C41B0;
-$info-color             : #2db7f5;
-$success-color          : #19be6b;
-$warning-color          : #ff9900;
-$error-color            : #ed3f14;
-$link-color             : #2D8cF0;
-$link-hover-color       : tint($link-color, 20%);
-$link-active-color      : shade($link-color, 5%);
-$selected-color         : fade($primary-color, 90%);
-$tooltip-color          : #fff;
-$subsidiary-color       : #80848f;
-$rate-star-color        : #f5a623;
+$primary-color          : #4b61d9 !default;
+$primary-hover-color    : #2C41B0 !default;
+$primary-active-color   : #2C41B0 !default;
+$info-color             : #2db7f5 !default;
+$success-color          : #19be6b !default;
+$warning-color          : #ff9900 !default;
+$error-color            : #ed3f14 !default;
+$link-color             : #2D8cF0 !default;
+$link-hover-color       : tint($link-color, 20%) !default;
+$link-active-color      : shade($link-color, 5%) !default;
+$selected-color         : fade($primary-color, 90%) !default;
+$tooltip-color          : #fff !default;
+$subsidiary-color       : #80848f !default;
+$rate-star-color        : #f5a623 !default;
 
 // Base
-$body-background        : #fff;
-$font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-$code-family            : Consolas,Menlo,Courier,monospace;
-$title-color            : #1c2438;
-$text-color             : #495060;
-$font-size-base         : 14px;
-$font-size-small        : 12px;
-$line-height-base       : 1.5;
-$line-height-computed   : floor(($font-size-base * $line-height-base));
-$border-radius-base     : 6px;
-$border-radius-small    : 4px;
-$cursor-disabled        : not-allowed;
+$body-background        : #fff !default;
+$font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif !default;
+$code-family            : Consolas,Menlo,Courier,monospace !default;
+$title-color            : #1c2438 !default;
+$text-color             : #495060 !default;
+$font-size-base         : 14px !default;
+$font-size-small        : 12px !default;
+$line-height-base       : 1.5 !default;
+$line-height-computed   : floor(($font-size-base * $line-height-base)) !default;
+$border-radius-base     : 6px !default;
+$border-radius-small    : 4px !default;
+$cursor-disabled        : not-allowed !default;
 
 // Border color
-$border-color-base      : #f7f7f7;  // outside
-$border-color-split     : #e9eaec;  // inside
+$border-color-base      : #f7f7f7 !default;  // outside
+$border-color-split     : #e9eaec !default;  // inside
 
 // Background color
-$background-color-base        : #f7f7f7;  // base
-// $background-color-select-hover: $input-disabled-bg;
-$tooltip-bg                   : rgba(70, 76, 91, .9);
-$head-bg                      : #f9fafc;
-$table-thead-bg               : #f8f8f9;
-$table-td-stripe-bg           : #f8f8f9;
-$table-td-hover-bg            : #ebf7ff;
-$table-td-highlight-bg        : #ebf7ff;
-$menu-dark-title              : #495060;
-$menu-dark-active-bg          : #363e4f;
-$menu-dark-subsidiary-color   : rgba(255,255,255,.7);
-$menu-dark-group-title-color  : rgba(255,255,255,.36);
-$date-picker-cell-hover-bg    : #e1f0fe;
+$background-color-base        : #f7f7f7 !default;  // base
+// $background-color-select-hover: $input-disabled-bg !default;
+$tooltip-bg                   : rgba(70, 76, 91, .9) !default;
+$head-bg                      : #f9fafc !default;
+$table-thead-bg               : #f8f8f9 !default;
+$table-td-stripe-bg           : #f8f8f9 !default;
+$table-td-hover-bg            : #ebf7ff !default;
+$table-td-highlight-bg        : #ebf7ff !default;
+$menu-dark-title              : #495060 !default;
+$menu-dark-active-bg          : #363e4f !default;
+$menu-dark-subsidiary-color   : rgba(255,255,255,.7) !default;
+$menu-dark-group-title-color  : rgba(255,255,255,.36) !default;
+$date-picker-cell-hover-bg    : #e1f0fe !default;
 
 // Shadow
-$shadow-color           : rgba(0, 0, 0, .2);
-// $shadow-base            : $shadow-down;
-$shadow-card            : 0 1px 1px 0 rgba(0,0,0,.1);
-$shadow-up              : 0 -1px 6px $shadow-color;
-$shadow-down            : 0 1px 6px $shadow-color;
-$shadow-left            : -1px 0 6px $shadow-color;
-$shadow-right           : 1px 0 6px $shadow-color;
+$shadow-color           : rgba(0, 0, 0, .2) !default;
+$shadow-card            : 0 1px 1px 0 rgba(0,0,0,.1) !default;
+$shadow-up              : 0 -1px 6px $shadow-color !default;
+$shadow-down            : 0 1px 6px $shadow-color !default;
+$shadow-left            : -1px 0 6px $shadow-color !default;
+$shadow-right           : 1px 0 6px $shadow-color !default;
+$shadow-base            : $shadow-down !default;
 
 // Button
-$btn-font-weight        : normal;
-$btn-padding-base       : 6px 15px;
-$btn-padding-large      : 6px 15px 7px 15px;
-$btn-padding-small      : 2px 7px;
-$btn-font-size          : 12px;
-$btn-font-size-large    : 14px;
-$btn-border-radius      : 4px;
-$btn-border-radius-small: 3px;
-$btn-group-border       : shade($primary-color, 5%);
+$btn-font-weight        : normal !default;
+$btn-padding-base       : 6px 15px 7px 15px !default;
+$btn-padding-large      : 7px 15px 8px 15px !default;
+$btn-padding-small      : 3px 7px 4px 7px !default;
+$btn-font-size          : 12px !default;
+$btn-font-size-large    : 14px !default;
+$btn-border-radius      : 4px !default;
+$btn-border-radius-small: 3px !default;
+$btn-group-border       : shade($primary-color, 5%) !default;
 
-$btn-disable-color      :  #8898A5;
-$btn-disable-bg         : #C7D5D9 ;
-$btn-disable-border     : #C7D5D9 ;
+$btn-disable-color      :  #8898A5 !default;
+$btn-disable-bg         : #e6ecee  !default;
+$btn-disable-border     : #C7D5D9  !default;
 
-$btn-default-color      : $text-color;
-$btn-default-bg         : $background-color-base;
-$btn-default-border     : $border-color-base;
+$btn-default-color      : $text-color !default;
+$btn-default-bg         : $background-color-base !default;
+$btn-default-border     : $border-color-base !default;
 
-$btn-primary-color      : #fff;
-$btn-primary-bg         : $primary-color;
-$btn-primary-border     : $border-color-base;
+$btn-primary-color      : #fff !default;
+$btn-primary-bg         : $primary-color !default;
+$btn-primary-border     : $primary-color !default;
 
 
-$btn-text-color      : $text-color;
-$btn-text-bg         : transparent;
-$btn-text-border     : transparent;;
+$btn-text-color      : $text-color !default;
+$btn-text-bg         : transparent !default;
+$btn-text-border     : transparent !default;
 
-$btn-ghost-color        : $text-color;
-$btn-ghost-bg           : transparent;
-$btn-ghost-border       : $primary-color;
+$btn-ghost-color        : $text-color !default;
+$btn-ghost-bg           : transparent !default;
+$btn-ghost-border       : $primary-color !default;
 
-$btn-circle-size        : 32px;
-$btn-circle-size-large  : 36px;
-$btn-circle-size-small  : 24px;
+$btn-circle-size        : 32px !default;
+$btn-circle-size-large  : 36px !default;
+$btn-circle-size-small  : 24px !default;
 
 // Layout and Grid
-$grid-columns                : 24;
-$grid-gutter-width           : 0;
-$layout-body-background      : #f5f7f9;
-$layout-header-background    : #495060;
-$layout-header-height        : 64px;
-$layout-header-padding       : 0 50px;
-$layout-footer-padding       : 24px 50px;
-$layout-footer-background    : $layout-body-background;
-$layout-sider-background     : $layout-header-background;
-$layout-trigger-height       : 48px;
-$layout-trigger-color        : #fff;
-$layout-zero-trigger-width   : 36px;
-$layout-zero-trigger-height  : 42px;
+$grid-columns                : 24 !default;
+$grid-gutter-width           : 0 !default;
+$layout-body-background      : #f5f7f9 !default;
+//layout-header
+$layout-header-position      : relative !default;
+$layout-header-width         : 100% !default;
+$layout-header-height        : 60px !default;
+$layout-header-background    : #fff !default;
+$layout-header-shadow        : 0 2px 8px 0 rgba(13,29,74,.19) !default;
+$layout-header-title-width         : 180px !default;
+$layout-header-title-height        : 100% !default;
+$layout-header-title-background    : #4b61d9 !default;
+$layout-header-title-fontSize      : 28px !default;
+$layout-header-title-color         : #fff !default;
+$layout-header-title-textAlign     : center !default;
+$layout-header-title-lineHeight    : 60px !default;
+$layout-header-logout-position      : absolute !default;
+$layout-header-logout-top           : 20px !default;
+$layout-header-logout-right         : 30px !default;
+$layout-header-logout-fontSize      : 14px !default;
+$layout-header-logout-color         : #495060 !default;
+//layout-sider
+$layout-sider-position      : relative !default;
+$layout-sider-width         : 180px !default;
+$layout-sider-height        : 100% !default;
+$layout-sider-background    : #152858 !default;
+$layout-sider-shadow        : 0 6px 10px 0 rgba(74,97,217,.55) !default;
+$layout-sider-siderMenu-height :50px !default;
+$layout-sider-siderMenu-lineHeight :50px !default;
+$layout-sider-siderMenu-color  : #d5e0e4 !default;
+$layout-sider-siderMenu-fontSize  : 16px !default;
+$layout-sider-siderMenu-hover-background : #27386f !default;
+$layout-sider-siderMenu-active-background : #27386f !default;
+$layout-sider-siderMenu-active-color : #96acff !default;
+$layout-sider-siderMenu-marginBottom: 6px !default;
+$layout-sider-siderMenu-paddingLeft: 45px !default;
+$layout-sider-siderMenu-icon-left: 14px !default;
+$layout-sider-siderMenu-icon-top: 16px !default;
+$layout-sider-siderMenu-icon-color: $layout-sider-siderMenu-color !default;
+$layout-sider-siderMenu-active-icon-color: $layout-sider-siderMenu-active-color !default;
+$layout-sider-siderMenu-icon-fontSize : 20px !default;
+$layout-sider-siderMenu-slide-right: 10px !default;
+$layout-sider-siderMenu-slide-top: 16px !default;
+$layout-sider-siderMenu-slide-color: #fff !default;
+$layout-sider-siderSubMenu-height: 42px !default;
+$layout-sider-siderSubMenu-lineHeight :42px !default;
+$layout-sider-siderSubMenu-color  : #fff !default;
+$layout-sider-siderSubMenu-fontSize  : 14px !default;
+$layout-sider-siderSubMenu-hover-background : #27386f !default;
+$layout-sider-siderSubMenu-active-background : #27386f !default;
+$layout-sider-siderSubMenu-active-color : #96acff !default;
+$layout-sider-siderSubMenu-marginTop: 4px !default;
+$layout-sider-siderSubMenu-paddingLeft: 54px !default;
+//layout-footer
+$layout-footer-padding       : 24px 50px !default;
+$layout-footer-background    : $layout-body-background !default;
+// $layout-sider-background     : $layout-header-background !default;
+$layout-trigger-height       : 48px !default;
+$layout-trigger-color        : #fff !default;
+$layout-zero-trigger-width   : 36px !default;
+$layout-zero-trigger-height  : 42px !default;
 
 // Legend
-$legend-color           : #999;
+$legend-color           : #999 !default;
 
 // Input
-$input-height-base           : 32px;
-$input-height-large          : 36px;
-$input-height-small          : 24px;
+$input-height-base           : 32px !default;
+$input-lineheight-base          : 32px !default;
+$input-height-large          : 36px !default;
+$input-height-small          : 24px !default;
 
-$input-padding-horizontal    : 7px;
-$input-padding-vertical-base : 4px;
-$input-padding-vertical-small: 1px;
-$input-padding-vertical-large: 6px;
+$input-padding-horizontal    : 7px !default;
+$input-padding-vertical-base : 5px !default;
+$input-padding-vertical-small: 1px !default;
+$input-padding-vertical-large: 6px !default;
+$input-padding-icon-base :30px !default;
 
-$input-placeholder-color     : $btn-disable-color;
-$input-color                 : $text-color;
-$input-border-color          : $border-color-base;
-$input-bg                    : #fff;
+$input-placeholder-color     : $btn-disable-color !default;
+$input-color                 : $text-color !default;
+$input-border-color          : #dcdfe6 !default;
+$input-bg                    : #fff !default;
 
-$input-hover-border-color    : $primary-color;
-$input-focus-border-color    : $primary-color;
-// $input-disabled-bg           : #f3f3f3;
+$input-hover-border-color    : $primary-color !default;
+$input-focus-border-color    : $primary-color !default;
+$input-disabled-bg           : #f3f3f3 !default;
+
+$radio-color-base         : #dcdfe6 !default;
+$radio-disabled-color: #c0c4cc !default;
+
+$checkbox-icon-padding:2px !default;
 
 // Tag
-$tag-font-size          : 12px;
+$tag-font-size          : 12px !default;
+$tag-info-border-color          : #4CAF50 !default;
+$tag-info-color          : #4CAF50 !default;
+$tag-info-active-color          : #409544 !default;
+$tag-default-height        :22px !default;
+$tag-default-padding        :0 8px !default;
+$tag-large-height        :30px !default;
+$tag-large-padding        :0 10px !default;
+$tag-small-height        :18px !default;
+$tag-small-padding        :0 6px !default;
+
 
 // Media queries breakpoints
 // Extra small screen / phone
-$screen-xs              : 480px;
-$screen-xs-min          : $screen-xs;
-$screen-xs-max          : ($screen-xs-min - 1);
+$screen-xs              : 480px !default;
+$screen-xs-min          : $screen-xs !default;
+$screen-xs-max          : ($screen-xs-min - 1) !default;
 
 // Small screen / tablet
-$screen-sm              : 768px;
-$screen-sm-min          : $screen-sm;
-$screen-sm-max          : ($screen-sm-min - 1);
+$screen-sm              : 768px !default;
+$screen-sm-min          : $screen-sm !default;
+$screen-sm-max          : ($screen-sm-min - 1) !default;
 
 // Medium screen / desktop
-$screen-md              : 992px;
-$screen-md-min          : $screen-md;
-$screen-md-max          : ($screen-md-min - 1);
+$screen-md              : 992px !default;
+$screen-md-min          : $screen-md !default;
+$screen-md-max          : ($screen-md-min - 1) !default;
 
 // Large screen / wide desktop
-$screen-lg              : 1200px;
-$screen-lg-min          : $screen-lg;
-$screen-lg-max          : ($screen-lg-min - 1);
+$screen-lg              : 1200px !default;
+$screen-lg-min          : $screen-lg !default;
+$screen-lg-max          : ($screen-lg-min - 1) !default;
 
 // Z-index
-$zindex-spin            : 8;
-$zindex-affix           : 10;
-$zindex-back-top        : 10;
-$zindex-select          : 900;
-$zindex-modal           : 1000;
-$zindex-message         : 1010;
-$zindex-notification    : 1010;
-$zindex-tooltip         : 1060;
-$zindex-transfer        : 1060;
-$zindex-loading-bar     : 2000;
-$zindex-spin-fullscreen : 2010;
+$zindex-spin            : 8 !default;
+$zindex-affix           : 10 !default;
+$zindex-back-top        : 10 !default;
+$zindex-select          : 900 !default;
+$zindex-modal           : 1000 !default;
+$zindex-message         : 1010 !default;
+$zindex-notification    : 1010 !default;
+$zindex-tooltip         : 1060 !default;
+$zindex-transfer        : 1060 !default;
+$zindex-loading-bar     : 2000 !default;
+$zindex-spin-fullscreen : 2010 !default;
 
 // Animation
-$animation-time         : .3s;
-$transition-time        : .2s;
-$ease-in-out            : ease-in-out;
+$animation-time         : .3s !default;
+$transition-time        : .2s !default;
+$ease-in-out            : ease-in-out !default;
 
 // Slider
-$slider-color              : tint($primary-color, 20%);
-$slider-height             : 4px;
-$slider-margin             : 16px 0;
-$slider-button-wrap-size   : 18px;
-$slider-button-wrap-offset : -4px;
-$slider-disabled-color     : #ccc;
+$slider-color              : tint($primary-color, 20%) !default;
+$slider-height             : 4px !default;
+$slider-margin             : 16px 0 !default;
+$slider-button-wrap-size   : 18px !default;
+$slider-button-wrap-offset : -4px !default;
+$slider-disabled-color     : #ccc !default;
 
 // Avatar
-$avatar-size-base: 32px;
-$avatar-size-lg: 40px;
-$avatar-size-sm: 24px;
-$avatar-font-size-base: 18px;
-$avatar-font-size-lg: 24px;
-$avatar-font-size-sm: 14px;
-$avatar-bg: #ccc;
-$avatar-color: #fff;
-$avatar-border-radius: $border-radius-small;
+$avatar-size-base: 32px !default;
+$avatar-size-lg: 40px !default;
+$avatar-size-sm: 24px !default;
+$avatar-font-size-base: 18px !default;
+$avatar-font-size-lg: 24px !default;
+$avatar-font-size-sm: 14px !default;
+$avatar-bg: #ccc !default;
+$avatar-color: #fff !default;
+$avatar-border-radius: $border-radius-small !default;
+$avatar-position: absolute !default;
+$avatar-top: 20px !default;
+$avatar-right: 80px !default;
+//name
+$avatar-name-maxWidth: 120px !default;
+$avatar-name-fontSize: 14px !default;
+$avatar-name-color: #4b61d9 !default;
+
+
+//timeline
+$timeline-border-width :1px !default;
+$timeline-item-head-size:13px !default;
+
+//scroll
+$scroll-xy-opacity :0.5 !default;
+$scroll-xy-opacity-hover :0.8 !default;
+$scroll-xy-radius :10px !default;
+$scroll-y-width :7px !default;
+$scroll-x-height :7px !default;
+
+//select
+$select-default-height :36px !default;
+$select-large-height :40px !default;
+$select-small-height :28px !default;
+$select-default-padding:7px 30px 0 15px !default;
+$select-large-padding:10px 30px 0 15px !default;
+$select-small-padding:4px 30px 0 15px !default;
+$select-disabled-Color:#c0c4cc !default;
+$select-disabled-backColor:#e4e7ed !default;
+$select-disabled-borderColor:#e4e7ed !default;
+
+
+//date
+$date-width: 157px !default;
+$date-height: 34px !default;
+$date-background: #5670D5 !default;
+$date-radius: 34px !default;
+$date-color: #fff !default;
+$date-fontSize: 14px !default;
+$date-placeholder-color: rgba(255, 255, 255, 0.4) !default;
+$date-calendar-fontSize: 20px !default;
+$date-calendar-color: #fff !default;
+$date-close-circled-fontSize: 12px !default;
+$date-close-circled-color: rgba(255, 255, 255, 0.4) !default;
+$date-close-circled-hover-color: rgba(255, 255, 255, 0.6) !default;
+$date-arrow-fontSize: 16px !default;
+$date-arrow-color: #fff !default;
+
+
+
+$date-picker-width: 300px !default;
+$date-picker-height: 296px !default;
+$date-picker-shadow: 0 2px 8px 0 rgba(14,29,74,0.19) !default;
+$date-picker-background: #fff !default;
+$date-picker-radius: 14px !default;
+
+$date-pickerHeader-height: 34px !default;
+$date-pickerHeader-arrow-fontSize: 16px !default;
+$date-pickerHeader-arrow-color: #4B61D9 !default;
+$date-pickerHeader-arrow-hover-color: #A2B3C0 !default;
+$date-pickerHeader-arrow-disable-color: rgba(199,213,217,.45) !default;
+
+$date-pickerBody-height: 234px !default;
+$date-pickerBody-thead-background: #ECF0FF !default;
+$date-pickerBody-thead-color: #4C5764 !default;
+$date-pickerBody-thead-height: 23px !default;
+
+$date-pickerFooter-height: 42px !default;
+$date-pickerFooter-background: #fff !default;
+$date-pickerFooter-shadow: 0 2px 8px 0 rgba(14, 29, 74, 0.19) !default;
+$date-pickerFooter-radius: 16px !default;
+
+
+$card-padding-base:10px !default;
+$card-font-size:14px !default;
+$card-border-radius:4px !default;
+$card-default-color:$btn-default-color !default;
+$card-default-bg:'#fff' !default;
+$card-default-border:$btn-default-color;
+$card-disable-bg:'#ccc' !default;
+$card-disable-color:'#ccc' !default;
+$card-disable-border:'#ccc' !default;
+$card-circle-size:12px;

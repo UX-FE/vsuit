@@ -1,0 +1,35 @@
+$avatar-prefix: #{$css-prefix}avatar;
+
+.#{$avatar-prefix}{
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    &-circle{
+        background: #ccc;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 16px;
+    }
+    &-square{
+        background: #ccc;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 4px;
+    }
+    &-noback{
+        background: transparent;
+        color: $text-color;
+    }
+    i{
+        font-size:24px;
+        margin-top:2px;
+        color:#fff;
+    }
+}

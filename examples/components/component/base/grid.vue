@@ -5,36 +5,92 @@
         </div>
         <div class="mItem">
             <div class="title2">
-                类型：
+                基础用法：
             </div>
             <div class="wrap">
+                <Row>
+                    <Col span="24"><div>24</div></Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col span="12"><div>12</div></Col>
+                    <Col span="12"><div>12</div></Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col span="8"><div>8</div></Col>
+                    <Col span="8"><div>8</div></Col>
+                    <Col span="8"><div>8</div></Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col span="10"><div>10</div></Col>
+                    <Col span="14"><div>14</div></Col>
+                </Row>
                 <div class="q-title">说明：</div>
                 <div>
-                    按钮类型有：默认按钮、主按钮、文字按钮以及四种颜色按钮。
-                    <br/>
-                    通过设置type为primary、text创建不同样式的按钮，不设置为默认样式。
+                    采用24栅格系统，将区域进行24划分。
                 </div>
                 <div class="q-title">代码示例：</div>
-<pre>
-
-    &lt;BaseButton&gt;default&lt;/BaseButton&gt;
-    &lt;BaseButton type="primary"&gt;primary&lt;/BaseButton&gt;
-    &lt;BaseButton type="text"&gt;text&lt;/BaseButton&gt;
-
-</pre>
+                <DCode :code="code.baseRowCol" lang="html"></DCode>
+            </div>
+            <div class="title2">
+                分栏间隔：
+            </div>
+            <div class="wrap">
+                <Row :gutter="16">
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                    <Col span="6"><div>6</div></Col>
+                </Row>
+                <div class="q-title">说明：</div>
+                <div>
+                    通过给row增加gutter属性，给其下属col增加间隔
+                </div>
+                <div class="q-title">代码示例：</div>
+                 <DCode :code="code.gutterRowCol" lang="html"></DCode>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Code from '../../../code/component/base/grid';
 export default {
   data() {
     return {
+        code: Code
     };
   },
   methods: {
   },
   mounted() {}
 };
+
 </script>
+<style lang="sass" scoped>
+.vsu-col{
+    div{
+        height:40px;
+        background:#4B61D9;
+        border-radius:4px;
+        text-align:center;
+        color:#fff;
+        font-size:14px;
+        line-height:40px;
+    }
+    &:nth-child(odd){
+        div{
+            background:#8494ee;
+        }
+    }
+}
+</style>

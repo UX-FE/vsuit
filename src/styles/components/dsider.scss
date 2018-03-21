@@ -1,12 +1,13 @@
 
 .sider {
     position: fixed;
-    z-index: 4000;
+    z-index: 2;
     width: 400px;
     padding-left: 200px;
     height: 100%;
     background-color: #fff;
-    padding-top: 110px;
+	padding-top: 110px;
+	padding-bottom: 10px;
     top: 0;
 	&>ul{
 		position: relative;

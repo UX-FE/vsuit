@@ -1,0 +1,21 @@
+$bread-prefix: #{$css-prefix}bread;
+
+.#{$bread-prefix}{
+    color: #999;
+    font-size: 14px;
+    &>span{
+        &:last-child{
+            .#{$bread-prefix}item-separator{
+                display: none;
+            }
+        }
+    }
+    &item-link{
+        color: #495060;
+        transition: color .2s ease-in-out;
+    }
+    &item-separator{
+        margin: 0 8px;
+        color: #dddee1;
+    }
+}

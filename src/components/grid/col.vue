@@ -5,10 +5,11 @@
 </template>
 <script>
     import { findComponentUpward } from '../../utils/assist';
-    const prefixCls = 'uxk-col';
+    import { prefix } from '../var';
+    const colPrefix = prefix+'col';
 
     export default {
-        name: 'iCol',
+        name: 'Col',
         props: {
             span: [Number, String],
             order: [Number, String],
@@ -29,27 +30,27 @@
         computed: {
             classes () {
                 let classList = [
-                    `${prefixCls}`,
+                    `${colPrefix}`,
                     {
-                        [`${prefixCls}-span-${this.span}`]: this.span,
-                        [`${prefixCls}-order-${this.order}`]: this.order,
-                        [`${prefixCls}-offset-${this.offset}`]: this.offset,
-                        [`${prefixCls}-push-${this.push}`]: this.push,
-                        [`${prefixCls}-pull-${this.pull}`]: this.pull,
+                        [`${colPrefix}-span-${this.span}`]: this.span,
+                        [`${colPrefix}-order-${this.order}`]: this.order,
+                        [`${colPrefix}-offset-${this.offset}`]: this.offset,
+                        [`${colPrefix}-push-${this.push}`]: this.push,
+                        [`${colPrefix}-pull-${this.pull}`]: this.pull,
                         [`${this.className}`]: !!this.className
                     }
                 ];
 
                 ['xs', 'sm', 'md', 'lg'].forEach(size => {
                     if (typeof this[size] === 'number') {
-                        classList.push(`${prefixCls}-span-${size}-${this[size]}`);
+                        classList.push(`${colPrefix}-span-${size}-${this[size]}`);
                     } else if (typeof this[size] === 'object') {
                         let props = this[size];
                         Object.keys(props).forEach(prop => {
                             classList.push(
                                 prop !== 'span'
-                                    ? `${prefixCls}-${size}-${prop}-${props[prop]}`
-                                    : `${prefixCls}-span-${size}-${props[prop]}`
+                                    ? `${colPrefix}-${size}-${prop}-${props[prop]}`
+                                    : `${colPrefix}-span-${size}-${props[prop]}`
                             );
                         });
                     }

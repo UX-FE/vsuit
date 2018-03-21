@@ -1,0 +1,5 @@
+$dial-prefix: #{$css-prefix}dial;
+
+.#{$dial-prefix}{
+    overflow:hidden;
+}

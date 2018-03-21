@@ -1,0 +1,44 @@
+$dropdown-prefix:#{$css-prefix}dropdown;
+.#{$dropdown-prefix}{
+    display: inline-block;
+    position: relative;
+    &-header{
+        position: relative;
+    }
+    &-drop{
+        overflow: auto;
+        margin: 5px 0;
+        padding: 5px 0;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 4px;
+        box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        position: absolute;
+        z-index: 900;
+        overflow: visible;
+        max-height: none;
+        width: inherit;
+        max-height: 200px;
+        min-width: 100px;
+    }
+    &-item{
+        margin: 0;
+        line-height: normal;
+        padding: 7px 16px;
+        clear: both;
+        color: #495060;
+        font-size: 12px!important;
+        white-space: nowrap;
+        list-style: none;
+        cursor: pointer;
+        transition: background .2s ease-in-out;
+        &:hover{
+            background: #f3f3f3;
+        }
+        &-disabled{
+            cursor: default;
+            color: #bbb;
+            pointer-events: none;
+        }
+    }
+}

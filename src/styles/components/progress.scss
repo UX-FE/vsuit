@@ -1,0 +1,165 @@
+$progress-prefix:#{$css-prefix}progress;
+
+.#{$progress-prefix}{
+    display: inline-block;
+    width: 100%;
+    &-outer{
+        padding-right: 55px;
+        margin-right: -55px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+    }
+    &-hidetext{
+        .#{$progress-prefix}-outer{
+            padding-right: 0;
+            margin-right: 0;
+
+        }
+    }
+    &-bar-wrap{
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 100%;
+        background: #EBEFF1;
+        -webkit-box-shadow: inset 0 0 3px 0 rgba(162,179,192,.27);
+        -moz-box-shadow: inset 0 0 3px 0 rgba(162,179,192,.27);
+        -ms-box-shadow: inset 0 0 3px 0 rgba(162,179,192,.27);
+        -o-box-shadow: inset 0 0 3px 0 rgba(162,179,192,.27);
+        box-shadow: inset 0 0 3px 0 rgba(162,179,192,.27);
+        border-radius: 4px;
+
+    }
+    &-bar{
+        position: relative;
+        border-radius: 4px;
+        height: 100%;
+        background-color:$primary-color;
+        text-align: right;
+        color: #Fff;
+    }
+    &-text{
+        display: inline-block;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 1em;
+        vertical-align: middle;
+
+    }
+    &-inner-text{
+        color:#fff;
+        margin:0 6px;
+    }
+    &-vertical{
+        height: 100%;
+        width: auto;
+        .#{$progress-prefix}{
+            &-outer{
+                height: 100%;
+                width: auto;
+            }
+            &-bar-wrap{
+                height: 100%;
+                width: auto;
+
+            }
+
+        }
+    }
+    &-default{
+        &.#{$progress-prefix}-active{
+            .#{$progress-prefix}{
+                &-bar{
+                    transition: all .2s linear;
+                    &:before{
+                        content: "";
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: #fff;
+                        border-radius: 10px;
+                        animation: progress-active 2s ease-in-out infinite;
+                    }
+                }
+            }
+    
+        }
+    }
+    &-error{
+        .#{$progress-prefix}{
+            &-bar{
+                background-color: #f56c6c;
+            }
+        }
+        .error-icon{
+            color:#f56c6c;
+        }
+    }
+    &-success{
+        .#{$progress-prefix}{
+            &-bar{
+                background-color: #19be6b;
+            }
+        }
+        .success-icon{
+            color:#19be6b;
+        }
+        
+    }
+    &-strip{
+        .#{$progress-prefix}-bar{
+            background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            -webkit-background-size: 40px 40px;
+            background-size: 40px 40px;
+        }
+        &.#{$progress-prefix}-active{
+            .#{$progress-prefix}{
+                &-bar{
+                    transition: width .6s ease;
+                    -webkit-animation: progress-strip-active 2s linear infinite;
+                    -o-animation: progress-strip-active 2s linear infinite;
+                    animation: progress-strip-active 2s linear infinite;
+                }
+            }
+    
+        }
+    }
+    &-circle{
+        width:initial;
+        position: relative;
+        .circle-text{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            transform: translateY(-50%);
+        }
+    }
+    
+}
+@keyframes progress-active {
+    0% {
+        opacity: .3;
+        width: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}
+@keyframes progress-strip-active {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 0;
+    }
+}

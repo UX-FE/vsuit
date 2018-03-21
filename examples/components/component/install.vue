@@ -9,23 +9,21 @@
             </div>
             <div class="wrap">
                 <div>
-                    推荐使用npm方式安装
+                    使用npm方式安装
                 </div>
                 <div class="q-title">代码示例：</div>
-<pre>
-
-    npm i vsuit -S
-
-</pre>
+                <DCode :code="code.npm" lang="html"></DCode>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Code from '../../code/component/guide/install';
 export default {
   data() {
     return {
+        code: Code,
     };
   },
   methods: {

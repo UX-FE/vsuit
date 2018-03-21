@@ -1,0 +1,192 @@
+$page-prefix:#{$css-prefix}page;
+$select-prefix:#{$css-prefix}select;
+.#{$page-prefix}{
+    display: inline-block;
+    vertical-align: middle;
+    &-paging{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &-info{
+        display: inline-block;
+        vertical-align: middle;
+        .#{$select-prefix}{
+            height: 32px;
+            width:70px;
+            margin-right:20px;
+            
+        }
+
+    }
+    &-item{
+        display: inline-block;
+        //float: left;
+        vertical-align: middle;
+        min-width: $btn-circle-size;
+        height: $btn-circle-size;
+        line-height: $btn-circle-size - 2px;
+        margin-right: 4px;
+        text-align: center;
+        list-style: none;
+        background-color: #fff;
+        color:$text-color;
+        user-select: none;
+        cursor: pointer;
+        font-family: Arial;
+        border: 1px solid $border-color-base;
+        border-radius: $btn-border-radius;
+        //transition: all @transition-time @ease-in-out;
+        transition: border $transition-time $ease-in-out, color $transition-time $ease-in-out;
+        &:hover {
+            border-color: $primary-color;
+            a {
+                color: $primary-color;
+            }
+        }
+
+        &-active {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: #fff;
+        }
+    }
+    &-prefold,&-nextfold{
+        width:36px;
+        &:after {
+            content: "•••";
+            display: block;
+            letter-spacing: 1px;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .fold-body{
+            display: none;
+        }
+
+        &:hover {
+            &:after{
+                display: none;
+            }
+            .fold-body{
+                display: inline;
+            }
+        }
+
+    }
+    &-pre,&-next,&-prefold,&-nextfold{
+        display: inline-block;
+        //float: left;
+        vertical-align: middle;
+        //float: left;
+        min-width: $btn-circle-size;
+        height: $btn-circle-size;
+        line-height: $btn-circle-size - 2px;
+        list-style: none;
+        text-align: center;
+        cursor: pointer;
+        color: #666;
+        padding: 0 8px;
+        font-family: Arial;
+        border: 1px solid $border-color-base;
+        border-radius: $btn-border-radius;
+        transition: all $transition-time $ease-in-out;
+        &:hover {
+            border-color: $primary-color;
+            a {
+                color: $primary-color;
+            }
+        }
+
+        &-active {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: #fff;
+        }
+
+    }
+    &-jump{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+        .#{$page-prefix}-edit{
+            display: inline-block;
+            vertical-align: middle;
+            input{
+                height: 32px;
+                line-height: 1.5;
+                padding: 4px 7px;
+                font-size: 12px;
+                border: 1px solid #dddee1;
+                color: #495060;
+                background-color: #fff;
+                background-image: none;
+                position: relative;
+                cursor: text;
+                transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+                border-radius: 4px;
+                margin: 0 8px;
+                width: 50px;
+            }
+        }
+        .#{$page-prefix}-search{
+            display: inline-block;
+            vertical-align: middle;
+            //float: left;
+            min-width: $btn-circle-size;
+            height: $btn-circle-size;
+            line-height: $btn-circle-size - 2px;
+            list-style: none;
+            text-align: center;
+            cursor: pointer;
+            color: #666;
+            padding: 0 8px;
+            font-family: Arial;
+            border: 1px solid $border-color-base;
+            border-radius: $btn-border-radius;
+            transition: all $transition-time $ease-in-out;
+            &:hover {
+                border-color: $primary-color;
+                a {
+                    color: $primary-color;
+                }
+            }
+
+            &-active {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                color: #fff;
+            }
+
+        }
+    }
+    &-noborder{
+        .#{$page-prefix}{
+            &-item{
+                border: none;
+                &-active{
+                    background-color: #fff;
+                    border-color: none;
+                    color: $primary-color;
+                    font-weight:900;
+                }
+            }
+            &-prefold,&-nextfold{
+                border: none;
+            }
+            &-pre,&-next,&-prefold,&-nextfold{
+                border: none;
+
+            }
+            &-jump{
+                .#{$page-prefix}-search{
+                    border: none;
+
+                }
+            }
+        }
+    }
+
+
+
+}

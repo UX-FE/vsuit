@@ -5,8 +5,8 @@
 </template>
 <script>
     import { oneOf, findComponentsDownward } from '../../utils/assist';
-
-    const prefixCls = 'uxk-row';
+    import { prefix } from '../var';
+    const rowPrefix = prefix+'row';
 
     export default {
         name: 'Row',
@@ -36,10 +36,10 @@
             classes () {
                 return [
                     {
-                        [`${prefixCls}`]: !this.type,
-                        [`${prefixCls}-${this.type}`]: !!this.type,
-                        [`${prefixCls}-${this.type}-${this.align}`]: !!this.align,
-                        [`${prefixCls}-${this.type}-${this.justify}`]: !!this.justify,
+                        [`${rowPrefix}`]: !this.type,
+                        [`${rowPrefix}-${this.type}`]: !!this.type,
+                        [`${rowPrefix}-${this.type}-${this.align}`]: !!this.align,
+                        [`${rowPrefix}-${this.type}-${this.justify}`]: !!this.justify,
                         [`${this.className}`]: !!this.className
                     }
                 ];
@@ -58,7 +58,7 @@
         },
         methods: {
             updateGutter (val) {
-                const Cols = findComponentsDownward(this, 'iCol');
+                const Cols = findComponentsDownward(this, 'Col');
                 if (Cols.length) {
                     Cols.forEach((child) => {
                         if (val !== 0) {

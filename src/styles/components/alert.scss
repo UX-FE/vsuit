@@ -1,0 +1,104 @@
+$alert-prefix: #{$css-prefix}alert;
+
+.#{$alert-prefix}{
+    width: 100%;
+    transition: opacity .2s;
+    &-content{
+        padding: 8px 16px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        position:relative;
+    }
+    &-normal{
+        width: 100%;
+        margin:0;
+        display: flex;
+        align-items: center;
+        .#{$alert-prefix}{
+            &-content{
+                width: 100%;
+            }
+        }
+
+    }
+    &-fix{
+        position: fixed;
+        z-index: 1010;
+        width: 100%;
+        top: 16px;
+        left: 0;
+        text-align:center;
+        .#{$alert-prefix}{
+            &-content{
+                display: inline-block;
+                box-shadow: 0 1px 6px rgba(0,0,0,.2);
+                padding-right:64px;
+            }
+        }
+    }
+    &-close{
+        font-size: 14px;
+        opacity: 1;
+        position:absolute;
+        right:16px;
+        top:7px;
+        display: inline-block;
+        cursor: pointer;
+        z-index:1011;
+        i{
+            // position:absolute;
+            // right:0;
+            color: #c0c4cc;
+            font-size:24px;
+        }
+    }
+    &-icon{
+        font-size: 16px;
+        width: 16px;
+        margin-right:6px;
+    }
+    &-info{
+        .#{$alert-prefix}{
+            &-content{
+                background-color: #f4f4f5;
+                color: #909399;
+            }
+            &-icon>i{
+                color:#909399;
+            }
+        }
+    }
+    &-success{
+        .#{$alert-prefix}{
+            &-content{
+                background-color: #f0f9eb;
+                color: #67c23a;
+            }
+            &-icon>i{
+                color:#67c23a;
+            }
+        }
+    }
+    &-warn{
+        .#{$alert-prefix}{
+            &-content{
+                background-color: #fdf6ec;
+                color: #e6a23c;
+            }
+            &-icon>i{
+                color:#e6a23c;
+            }
+        }
+    }
+    &-error{
+        .#{$alert-prefix}{
+            &-content{
+                background-color: #fef0f0;
+                color: #f56c6c;
+            }
+            &-icon>i{
+                color:#f56c6c;
+            }
+        }
+    }
+}

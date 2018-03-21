@@ -1,0 +1,78 @@
+$tab-prefix:#{$css-prefix}tab;
+
+.#{$tab-prefix}{
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    color: $text-color;
+    @include clearfix;
+    &-tabs{
+        outline: none;
+        border-bottom: 1px solid #4b61d9;
+
+
+    }
+    &-tab-item{
+        width: 93px;
+        position: relative;
+        font-size: 14px;
+        color: #6b7c83;
+        text-align: center;
+        display: inline-block;
+        height: 34px;
+        line-height: 34px;
+        margin-right: 10px;
+        cursor: pointer;
+        .line{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 100px;
+            height: 4px;
+            width: 100%;
+        }
+        &:hover,&:active,&.active{
+            .line{
+                background: #4b61d9;
+            }
+        }
+    }
+    &-content-wrap{
+        outline: none;
+        padding: 10px 20px;
+        .#{$tab-prefix}-content {
+            flex-shrink: 0;
+            width: 100%;
+            transition: opacity .3s;
+         
+        }
+    }
+    &-bordered{
+        .#{$tab-prefix}-tabs{
+            margin-bottom: -1px;
+            overflow: hidden;
+            height: 34px;
+
+            box-sizing: border-box;
+            white-space: nowrap;
+            position:relative;
+
+
+        }
+        .#{$tab-prefix}-tab-item {
+            border:1px solid #ccc;
+            border-bottom:none;
+            border-radius: 4px 4px 0 0;
+            background:#f8f8f9;
+            &:hover,&:active,&.active{
+                background:#fff;
+                height:36px;
+                z-index:2;
+
+            }
+         
+        }
+
+    }
+
+}

@@ -1,0 +1,86 @@
+$transfer-prefix:#{$css-prefix}transfer;
+
+.#{$transfer-prefix}{
+    &-panel{
+        border: 1px solid #ebeef5;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        width: 200px;
+        box-sizing: border-box;
+        position: relative;
+        .#{$transfer-prefix}-panel{
+            &-header{
+                height: 40px;
+                line-height: 40px;
+                background: #f5f7fa;
+                margin: 0;
+                padding-left: 15px;
+                border-bottom: 1px solid #ebeef5;
+                box-sizing: border-box;
+                color: #000;
+                position:relative;
+                .sum{
+                    position: absolute;
+                    right: 0;
+                    padding: 0 15px;
+                }
+            }
+            &-body{
+                margin: 0;
+                padding: 6px 0px;
+                list-style: none;
+                height: 246px;
+                box-sizing: border-box;
+            }
+            &-item{
+                padding-left:15px;
+            }
+        }
+    }
+    &-action{
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 30px;
+        .#{$transfer-prefix}-button{
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+            background-color: #409eff;
+            border-radius:12px;
+            padding:10px;
+            cursor: pointer;
+            i{
+                font-size:18px;
+                color:#fff;
+            }
+            &:nth-child(1){
+                margin-bottom: 10px;
+            }
+            &:nth-child(2){
+                margin: 0;
+            }
+            &:hover,&:active{
+                color: #fff;
+                background-color: #a0cfff;
+                border-color: #a0cfff;  
+            }
+            &.disabled{
+                border: 1px solid #dcdfe6;
+                background-color: #f5f7fa;
+                color: #c0c4cc;
+                cursor: default;
+                &:hover,&:active{
+                    border: 1px solid #dcdfe6;
+                    background-color: #f5f7fa;
+                    color: #c0c4cc;
+                }
+                i{
+                    color:#c0c4cc;
+                }
+            }
+        }
+    }
+}

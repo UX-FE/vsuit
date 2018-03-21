@@ -1,0 +1,63 @@
+$modal-prefix: #{$css-prefix}modal;
+.#{$modal-prefix} {
+    width: auto;
+    margin: 0 auto;
+    outline: 0;
+    position: relative;
+    background-color: #fff;
+    border: 0;
+    border-radius: 6px;
+    background-clip: padding-box;
+    &-mask{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(55,55,55,.2);
+        height: 100%;
+        z-index: 1000;
+    }
+    &-wrap{
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+    &-header{
+        border-bottom: 1px solid #e9eaec;
+        padding: 14px 16px;
+        line-height: 1;
+        position:relative;
+        font-size:14px;
+    }
+    &-close{
+        font-size: 12px;
+        position: absolute;
+        right: 16px;
+        top: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        i{
+            font-size:24px;
+        }
+    }
+    &-body{
+        padding: 16px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    &-footer{
+        border-top: 1px solid #e9eaec;
+        padding: 12px 18px;
+        text-align: right;
+    }
+    &-hidden{
+
+    }
+}

@@ -1,0 +1,44 @@
+// Icons
+// --------------------------
+.#{$icons-prefix}success:before { content: $icon-var-success; }
+.#{$icons-prefix}fail:before { content: $icon-var-fail; }
+.#{$icons-prefix}inQueue:before { content: $icon-var-inQueue; }
+.#{$icons-prefix}search:before { content: $icon-var-search; }
+.#{$icons-prefix}close:before { content: $icon-var-close; }
+.#{$icons-prefix}arrow-up:before { content: $icon-var-arrow-up; }
+.#{$icons-prefix}arrow-down:before { content: $icon-var-arrow-down; }
+.#{$icons-prefix}trigger-right:before { content: $icon-var-trigger-right; }
+.#{$icons-prefix}slideUp:before { content: $icon-var-slideDown; }
+.#{$icons-prefix}slideUp{
+    transform: scale(.4) rotate(180deg);
+    -webkit-transform: scale(.4) rotate(180deg);
+    -moz-transform: scale(.4) rotate(180deg);
+    -ms-transform: scale(.4) rotate(180deg);
+    -o-transform: scale(.4) rotate(180deg);
+}
+.#{$icons-prefix}slideDown:before { content: $icon-var-slideDown; }
+.#{$icons-prefix}slideDown{
+    transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -moz-transform: scale(.4);
+    -ms-transform: scale(.4);
+    -o-transform: scale(.4);
+}
+.#{$icons-prefix}index:before { content: $icon-var-index; }
+.#{$icons-prefix}menu1:before { content: $icon-var-menu1; }
+.#{$icons-prefix}menu2:before { content: $icon-var-menu2; }
+.#{$icons-prefix}menu3:before { content: $icon-var-menu3; }
+.#{$icons-prefix}menu4:before { content: $icon-var-menu4; }
+.#{$icons-prefix}menu5:before { content: $icon-var-menu5; }
+.#{$icons-prefix}menu6:before { content: $icon-var-menu6; }
+.#{$icons-prefix}menu7:before { content: $icon-var-menu7; }
+.#{$icons-prefix}menu8:before { content: $icon-var-menu8; }
+.#{$icons-prefix}menu9:before { content: $icon-var-menu9; }
+
+.#{$icons-prefix}img:before { content: $icon-var-img; }
+.#{$icons-prefix}pkg:before { content: $icon-var-pkg; }
+.#{$icons-prefix}excel:before { content: $icon-var-excel; }
+.#{$icons-prefix}ppt:before { content: $icon-var-ppt; }
+.#{$icons-prefix}txt:before { content: $icon-var-txt; }
+.#{$icons-prefix}word:before { content: $icon-var-word; }
+.#{$icons-prefix}other:before { content: $icon-var-other; }

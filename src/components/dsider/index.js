@@ -1,2 +1,2 @@
-import DSider from './dSider.vue';
-export default DSider;
+import DSider from '../example/dSider.vue'
+export default DSider

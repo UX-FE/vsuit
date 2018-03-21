@@ -1,0 +1,118 @@
+$switch-prefix:#{$css-prefix}switch;
+.#{$switch-prefix}-wrap{
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+
+}
+.#{$switch-prefix}{
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    line-height: 22px;
+    border-radius: 24px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all $transition-time $ease-in-out;
+
+    &-inner {
+        color: #fff;
+        font-size: $font-size-small;
+        position: absolute;
+        left: 25px;
+
+        i {
+            width: 12px;
+            height: 12px;
+            text-align: center;
+        }
+    }
+
+    &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #fff;
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        cursor: pointer;
+        transition: left $transition-time $ease-in-out, width $transition-time $ease-in-out;
+    }
+
+
+    &:focus {
+        box-shadow: 0 0 0 2px fade($primary-color, 20%);
+        outline: 0;
+    }
+
+    &:focus:hover {
+        box-shadow: none;
+    }
+
+
+    &-checked {
+        border-color: $primary-color;
+        background-color: $primary-color;
+
+        .#{$switch-prefix}-inner {
+            left: 8px;
+        }
+
+        &:after {
+            left: 25px;
+        }
+    }
+
+    &-disabled {
+        cursor: $cursor-disabled;
+        background: #f3f3f3;
+        border-color: #f3f3f3;
+
+        &:after {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .#{$switch-prefix}-inner {
+            color: #ccc;
+        }
+    }
+    
+    &-small {
+        width: 24px;
+        height: 12px;
+        line-height: 10px;
+        &:after {
+            width: 10px;
+            height: 10px;
+            top: 0;
+            left: 0;
+        }
+        &.#{$switch-prefix}-checked {
+            &:after {
+                left: 12px;
+            }
+        }
+        
+    }
+
+
+    &-large{
+        width: 60px;
+        &:after {
+            left: 1px;
+        }
+        &.#{$switch-prefix}-checked {
+            &:after {
+                left: 37px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,77 @@
+$bubble-prefix:#{$css-prefix}bubble;
+$bubble-arrow:#{$bubble-prefix}-arrow;
+$bubble-max-width: 250px;
+$bubble-arrow-width: 5px;
+$bubble-distance: $bubble-arrow-width - 1 + 4;
+
+.#{$bubble-prefix}{
+    display: inline-block;
+    position:relative;
+    &-target{
+        display: inline-block;
+        position: relative;
+    }
+    &-wrap{
+        @include popper($bubble-arrow, $bubble-arrow-width, $bubble-distance, #Fff);
+    }
+    &-text{
+        max-width: 250px;
+        min-height: 34px;
+        padding: 8px 12px;
+        background: #fff;
+        box-shadow: 0 1px 6px rgba(0,0,0,.2);
+        color:#303133;
+        text-align: left;
+        text-decoration: none;
+        border-radius: $border-radius-small;
+        box-shadow: $shadow-base;
+        white-space: nowrap;
+    }
+    &-title{
+        font-size:14px;
+    }
+    &-arrow{
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+    &-dark{
+        .#{$bubble-prefix}-text{
+            color: $tooltip-color;
+            background-color: $tooltip-bg;
+        }
+        .#{$bubble-prefix}-wrap{
+            @include popper($bubble-arrow, $bubble-arrow-width, $bubble-distance, $tooltip-bg);
+        }
+    }
+    &-light{
+        .#{$bubble-prefix}-text{
+            background: #fff;
+            box-shadow: 0 1px 6px rgba(0,0,0,.2);
+            color:#303133;
+        }
+        .#{$bubble-prefix}-wrap{
+            @include popper($bubble-arrow, $bubble-arrow-width, $bubble-distance, #Fff);
+        }
+        .#{$tooltip-prefix}-arrow{
+            border-top-color: #303133;
+            &:after{
+                content: " ";
+                border-width: 5px;
+                border-top-color: #fff;
+                bottom: 1px;
+                margin-left: -5px;
+                border-bottom-width: 0;
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+            }
+        }
+    }
+
+}

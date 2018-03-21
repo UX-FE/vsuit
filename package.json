@@ -19,25 +19,31 @@
     "src"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8581 --config build/webpack.dev.config.js",
-    "dist:style": "gulp --gulpfile build/build-style.js",
-    "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
-    "dist:prod": "webpack --config build/webpack.dist.prod.config.js",
-    "dist:locale": "webpack --config build/webpack.dist.locale.config.js",
-    "dist": "npm run dist:style && npm run dist:dev && npm run dist:prod && npm run dist:locale",
-    "lint": "eslint --fix --ext .js,.vue src",
+    "start": "webpack-dev-server --content-base public/ --open --inline --hot --compress --history-api-fallback --port 8581 --config build/webpack.dev.config.js",
+    "dev": "npm run build:fonts && npm run start",
+    "build:style": "gulp --gulpfile build/build-style.js",
+    "build:fonts": "cross-env Node_ENV=dev gulp --gulpfile build/build-fonts.js",
+    "build:dev": "webpack --config build/webpack.dist.dev.config.js",
+    "build:prod": "webpack --config build/webpack.dist.prod.config.js",
+    "build:locale": "webpack --config build/webpack.dist.locale.config.js",
+    "build": "npm run build:style && npm run build:dev && npm run build:prod && npm run build:locale",
+    "standard": "standard --plugin vue **/*.{js,vue}",
+    "standard:fix": "standard --fix",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run lint && npm run unit",
-    "prepublish": "npm run dist"
+    "test": "npm run standard && npm run unit",
+    "prepublish": "npm run build"
   },
   "author": "caomei",
   "license": "MIT",
   "dependencies": {
     "async-validator": "^1.8.2",
+    "axios": "^0.17.1",
     "core-js": "^2.5.3",
     "deepmerge": "^1.5.2",
     "element-resize-detector": "^1.1.12",
+    "highlight.js": "^9.12.0",
     "lodash.throttle": "^4.1.1",
+    "moment": "^2.20.1",
     "popper.js": "^0.6.4",
     "tinycolor2": "^1.4.1"
   },
@@ -65,7 +71,6 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
-    "gulp-less": "^3.3.2",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
@@ -83,10 +88,11 @@
     "less-loader": "^2.2.3",
     "lolex": "^1.5.2",
     "mocha": "^3.5.3",
+    "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "scss-loader": "^0.0.1",
     "sinon": "^3.3.0",
     "sinon-chai": "^2.14.0",
+    "standard": "^10.0.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.9",
     "vue": "^2.5.13",
@@ -111,6 +117,11 @@
   },
   "bugs": {
     "url": "https://github.com/UX-FE/vsuit/issues"
+  },
+  "standard": {
+    "plugins": [
+      "vue"
+    ]
   },
   "directories": {
     "example": "examples",

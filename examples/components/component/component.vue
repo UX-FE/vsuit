@@ -1,84 +1,142 @@
 <template>
-    <section class="contentMain">
-        <div class="main" id="J_component_main">
-            <template v-if="type==='install'">
-                <v-install></v-install>
-            </template>
-            <template v-if="type==='start'">
-                <v-start></v-start>
-            </template>
-            <template v-if="type==='i18n'">
-                <v-i18n></v-i18n>
-            </template>
-            <template v-if="type==='theme'">
-                <v-theme></v-theme>
-            </template>
-            <template v-if="type==='update'">
-                <v-update></v-update>
-            </template>
-            <template v-else-if="type==='grid'">
-                <v-grid></v-grid>
-            </template>
-            <template v-else-if="type==='button'">
-                <v-button></v-button>
-            </template>
-            <template v-else-if="type==='dial'">
-                <v-dial></v-dial>
-            </template>
-        </div>
-    </section>
+    <div class="main" id="J_main">
+        <anchored-component :type="type">
+            <slot></slot>
+        </anchored-component>
+    </div>
 </template>
 
 <script>
-
 import vInstall from './install'
 import vStart from './start'
 import vI18n from './i18n'
 import vTheme from './theme'
 import vUpdate from './update'
 import vGrid from './base/grid'
+import vLayout from './base/layout'
+import vHeader from './base/header'
+import vSider from './base/sider'
+import vIcon from './base/icon'
 import vButton from './base/button'
+import vSelect from './form/select'
+import vInput from './form/input'
+import vRadio from './form/radio'
+import vCheckbox from './form/checkbox'
+import vSwitch from './form/switch'
+import vDate from './form/date'
+import vRate from './form/rate'
+import vUpload from './form/upload'
+import vForm from './form/form'
+import vTable from './data/table'
+import vPage from './data/page'
+import vTree from './data/tree'
+import vProgress from './data/progress'
+import vModal from './dialog/modal'
+import vAlert from './tip/alert'
+import vLoading from './tip/loading'
+import vMessage from './tip/message'
+import vBubble from './tip/bubble'
+import vTooltip from './tip/tooltip'
+import vTag from './data/tag'
+import vBadge from './data/badge'
+import vStep from './navigation/step'
+import vBread from './navigation/bread'
+import vTab from './navigation/tab'
+import vMenu from './navigation/menu'
+import vDropDown from './navigation/dropdown'
+import vCard from './view/card'
+import vAvatar from './view/avatar'
+import vCollapse from './view/collapse'
+import vTransfer from './view/transfer'
+import vTimeline from './view/timeline'
+import vBacktop from './view/backtop'
+import vCarousel from './view/carousel'
+import vScroll from './view/scroll'
 import vDail from './chart/dial'
 export default {
-    name: 'v-component',
-    data() {       
-        return {
-            type:""
-        }
-    }, 
-    components: {
-        'v-install': vInstall,
-        'v-start': vStart,
-        'v-i18n': vI18n,
-        'v-theme': vTheme,
-        'v-update': vUpdate,
-        'v-grid': vGrid,
-        'v-button': vButton,
-        'v-dial': vDail,
-        // 'v-date': vDate,
-        // 'v-linechart':vLineChart,
-        // 'v-areaChart':vAreaChart,
-        // 'v-barchart':vBarChart,
-        // 'v-piechart':vPieChart,
-        // 'v-ringprogress':vRingProgress,
-        // 'v-waterball':vWaterBall,
-        // 'v-dial':vDialChart
-    },
-    watch: {
-        '$route.path':'getData'
-    },
-    methods: {
-        init() {
-            this.getData();
-        },
-        getData() {
-            this.type = this.$route.params.type;
-
-        }
-    },
-    mounted () {
-        this.init();
-
+  name: 'v-component',
+  data () {
+    return {
+      type: 'install'
     }
+  },
+  components: {
+    'anchored-component':{
+        render: function (createElement) {
+            return createElement(
+                'v-' + this.type,   // tag name 标签名称
+                this.$slots.default // 子组件中的阵列
+            )
+        },
+        components: {
+            'v-install': vInstall,
+            'v-start': vStart,
+            'v-i18n': vI18n,
+            'v-theme': vTheme,
+            'v-update': vUpdate,
+            'v-grid': vGrid,
+            'v-layout': vLayout,
+            'v-header': vHeader,
+            'v-sider': vSider,
+            'v-icon': vIcon,
+            'v-button': vButton,
+            'v-select': vSelect,
+            'v-input': vInput,
+            'v-radio': vRadio,
+            'v-checkbox': vCheckbox,
+            'v-switch': vSwitch,
+            'v-date': vDate,
+            'v-rate': vRate,
+            'v-modal': vModal,
+            'v-alert': vAlert,
+            'v-loading': vLoading,
+            'v-message': vMessage,
+            'v-upload': vUpload,
+            'v-form': vForm,
+            'v-table': vTable,
+            'v-page': vPage,
+            'v-tree': vTree,
+            'v-progress': vProgress,
+            'v-tooltip': vTooltip,
+            'v-bubble': vBubble,
+            'v-tag': vTag,
+            'v-badge': vBadge,
+            'v-step': vStep,
+            'v-bread': vBread,
+            'v-tab': vTab,
+            'v-menu': vMenu,
+            'v-dropdown': vDropDown,
+            'v-card': vCard,
+            'v-avatar': vAvatar,
+            'v-collapse': vCollapse,
+            'v-transfer': vTransfer,
+            'v-timeline': vTimeline,
+            'v-carousel': vCarousel,
+            'v-scroll': vScroll,
+            'v-backtop': vBacktop,
+            'v-dial': vDail,
+        },
+        props: {
+            type: {
+                type: String,
+                required: true
+            }
+        }
+    },
+  },
+  watch: {
+    '$route.path': 'getData'
+  },
+  methods: {
+    init () {
+      this.getData()
+    },
+    getData () {
+      this.type = this.$route.params.type
+    }
+  },
+  mounted () {
+    this.init()
+  }
 }
 </script>
